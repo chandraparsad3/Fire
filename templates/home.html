@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Data Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        <label for="temperature">Temperature:</label>
+        <input type="text" id="temperature" name="temperature" required>
+
+        <label for="rh">RH:</label>
+        <input type="text" id="rh" name="rh" required>
+
+        <label for="ws">Ws:</label>
+        <input type="text" id="ws" name="ws" required>
+
+        <label for="rain">Rain:</label>
+        <input type="text" id="rain" name="rain" required>
+
+        <label for="ffmc">FFMC:</label>
+        <input type="text" id="ffmc" name="ffmc" required>
+
+        <label for="dmc">DMC:</label>
+        <input type="text" id="dmc" name="dmc" required>
+
+        <label for="isi">ISI:</label>
+        <input type="text" id="isi" name="isi" required>
+
+        <label for="classes">Classes:</label>
+        <input type="text" id="classes" name="classes" required>
+
+        <label for="region">Region:</label>
+        <input type="text" id="region" name="region" required>
+
+        <input type="submit" value="Submit">
+    </form>
+    <h2>The FWI Prediction is {{result}}</h2>
+
+</body>
+</html>
